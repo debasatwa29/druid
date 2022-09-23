@@ -68,7 +68,7 @@ public class SingleDimensionEvenSizeShardSpec extends SingleDimensionShardSpec
     Preconditions.checkArgument(start != null && !start.isEmpty(), "start");
     Preconditions.checkArgument(end != null && !end.isEmpty(), "end");
     Preconditions.checkArgument(partitionNum >= 0, "partitionNum");
-    Preconditions.checkArgument(partitions > 0, "partitions");
+    //Preconditions.checkArgument(partitions > 0, "partitions");
     Preconditions.checkArgument(partitionSize > 0, "partitionSize");
     Preconditions.checkArgument(startCount > 0, "startCount");
     Preconditions.checkArgument(endCount > 0, "endCount");
