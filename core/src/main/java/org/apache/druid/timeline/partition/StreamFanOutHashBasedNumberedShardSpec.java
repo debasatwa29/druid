@@ -95,6 +95,12 @@ public class StreamFanOutHashBasedNumberedShardSpec extends StreamHashBasedNumbe
   }
 
   @Override
+  public <T> PartitionChunk<T> createChunk(T obj)
+  {
+    return NumberedPartitionChunk.make(getPartitionNum(), getNumCorePartitions(), obj);
+  }
+
+  @Override
   public boolean equals(Object o)
   {
     if (this == o) {
@@ -120,7 +126,7 @@ public class StreamFanOutHashBasedNumberedShardSpec extends StreamHashBasedNumbe
     return Objects.hash(getPartitionNum(), getNumCorePartitions());
   }
 
-  /*@Override*/
+  @Override
   public String getType()
   {
     return STREAM_FANOUT_HASHED;
